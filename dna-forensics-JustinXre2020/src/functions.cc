@@ -1,5 +1,4 @@
 #include "functions.hpp"
-
 #include <cctype>
 #include <iostream>
 #include <map>
