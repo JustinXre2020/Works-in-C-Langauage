@@ -7,10 +7,6 @@
 #include <string>
 using namespace std;
 
-/**************************************************************************/
-/* your function definitions                                              */
-/**************************************************************************/
-
 void InitBoard(Board& b) {
   for (unsigned i = 0; i < Board::kBoardHeight; ++i) {
     for (unsigned j = 0; j < Board::kBoardWidth; ++j) {
@@ -99,9 +95,6 @@ bool BoardLocationInBounds(int row, int col) {
   return false;
 }
 
-/**************************************************************************/
-/* provided to you                                                        */
-/**************************************************************************/
 std::string BoardToStr(const Board& b) {
   constexpr int kTotalWidth = Board::kBoardWidth * 11 - Board::kBoardHeight - 1;
   std::stringstream ss;
