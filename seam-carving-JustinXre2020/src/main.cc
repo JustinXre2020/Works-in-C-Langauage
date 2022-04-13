@@ -1,3 +1,4 @@
+
 #include <fstream>
 #include <iostream>
 
@@ -65,7 +66,7 @@ using namespace std;
 // }
 
 int main() {
-  ImagePPM image = ImagePPM("/home/vagrant/src/mp-seam-carving-JustinXre2020/images/image1.ppm");
+  ImagePPM image = ImagePPM("/home/vagrant/src/seam-carving-JustinXre2020/images/image1.ppm");
   SeamCarver seam = SeamCarver(image);
   for (int i = 0; i < seam.GetHeight(); ++i) {
     for (int j = 0; j < seam.GetWidth(); ++j) {
@@ -88,34 +89,36 @@ int main() {
   cout << seam.GetWidth() << endl;
   cout << "Above is the seam value of image" << endl;
 
-  int* arr = seam.GetHorizontalSeam();
-  for (int r = 0; r < seam.GetWidth(); ++r) {
-    cout << arr[r] << endl;
-  }
-  cout << "Above is the Horizontal Seam of image" << endl;
-
-  seam.RemoveHorizontalSeam();
-  int** energies2 = new int*[seam.GetHeight()];
-  for (int i = 0; i < seam.GetHeight(); ++i) {
-    energies2[i] = new int[seam.GetWidth()];
-    for (int j = 0; j < seam.GetWidth(); ++j) {
-      energies2[i][j] = seam.GetEnergy(i, j);
-      cout << energies2[i][j] << ' ';
-    }
-    cout << endl;
-  }
-  cout << seam.GetHeight() << endl;
-  cout << seam.GetWidth() << endl;
-  cout << "Above is the seam value of image after removed" << endl;
+  // int* arr = seam.GetHorizontalSeam();
+  // for (int r = 0; r < seam.GetWidth(); ++r) {
+  //   cout << arr[r] << endl;
+  // }
+  // cout << "Above is the Horizontal Seam of image" << endl;
 
   int* arr2 = seam.GetVerticalSeam();
   for (int r = 0; r < seam.GetHeight(); ++r) {
     cout << arr2[r] << endl;
   }
   cout << "Above is the Vertical Seam of image" << endl;
+
+  // seam.RemoveVerticalSeam();
+  // cout << seam.GetImage() << endl;
+  // // int** energies2 = new int*[seam.GetHeight()];
+  // // for (int i = 0; i < seam.GetHeight(); ++i) {
+  // //   energies2[i] = new int[seam.GetWidth()];
+  // //   for (int j = 0; j < seam.GetWidth(); ++j) {
+  // //     energies2[i][j] = seam.GetEnergy(i, j);
+  // //     cout << energies2[i][j] << ' ';
+  // //   }
+  // //   cout << endl;
+  // // }
+  // cout << seam.GetHeight() << endl;
+  // cout << seam.GetWidth() << endl;
+  // cout << "Above is the seam value of image after removed" << endl;
+
   
-  delete[] arr;
+  // delete[] arr;
   delete[] energies;
-  delete[] energies2;
+  // delete[] energies2;
   delete[] arr2;
 }
