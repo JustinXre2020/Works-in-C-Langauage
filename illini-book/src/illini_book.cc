@@ -128,8 +128,8 @@ int IlliniBook::GetRelated(int uin_1, int uin_2) const {
 
 
 int IlliniBook::GetRelated(int uin_1, int uin_2, const std::string& relationship) const {
-  if (!AreRelated(uin_1, uin_2, relationship))        // if two nodes are not related, just return -1
-    return -1;
+//   if (!AreRelated(uin_1, uin_2, relationship))        // if two nodes are not related, just return -1
+//     return -1;
   std::queue<std::pair<int, int>> q;      // create a queue to traverse the graph
   q.push({uin_1, 0});                     // add the start node to the queue
   std::map<int, bool> visited;            // create a map to store visited nodes
