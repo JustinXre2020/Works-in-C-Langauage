@@ -23,7 +23,7 @@ class CircularLinkedList {
   friend std::ostream& operator<<(std::ostream& os,
                                   const CircularLinkedList<U>& cll);
 
-//  private:
+ private:
   Node<T>* head_ = nullptr;
   Node<T>* tail_ = nullptr;
   Order node_order_ = Order::kASC;
