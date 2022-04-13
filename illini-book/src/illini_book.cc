@@ -3,7 +3,7 @@
 // Your code here!
 IlliniBook::IlliniBook(const std::string& people_fpath, const std::string& relations_fpath) {
   std::ifstream ifs_people{people_fpath};
-  std::vector<int> peoples;
+  std::vector<int> peoples;                                                       // a vector for all nodes
   int value = 0;
   while (ifs_people.good()) {
     ifs_people >> value;
